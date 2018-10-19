@@ -16,7 +16,7 @@ namespace MasterDevs.ChromeDevTools
             ChromePath = chromePath;
         }
 
-        public IChromeProcess Create(int port, bool headless)
+        public IChromeProcess Create(int port, bool headless, bool hideScrollBars = false)
         {
             string path = Path.GetRandomFileName();
             var directoryInfo = Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), path));
@@ -32,6 +32,10 @@ namespace MasterDevs.ChromeDevTools
             };
             if (headless)
                 chromeProcessArgs.Add(headlessArg);
+
+            if (hideScrollBars)
+                chromeProcessArgs.Add("--hide-scrollbars");
+
             var processStartInfo = new ProcessStartInfo(ChromePath, string.Join(" ", chromeProcessArgs));
             var chromeProcess = Process.Start(processStartInfo);
 
