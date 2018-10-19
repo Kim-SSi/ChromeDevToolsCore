@@ -34,5 +34,15 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public Runtime.StackTrace AsyncStackTrace { get; set; }
+		/// <summary>
+		/// Gets or sets Async stack trace, if any.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.StackTraceId AsyncStackTraceId { get; set; }
+		/// <summary>
+		/// Gets or sets Just scheduled async call will have this stack trace as parent stack during async execution.This field is available only after `Debugger.stepInto` call with `breakOnAsynCall` flag.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Runtime.StackTraceId AsyncCallStackTraceId { get; set; }
 	}
 }

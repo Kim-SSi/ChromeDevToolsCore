@@ -6,7 +6,6 @@ using System.Runtime.Serialization;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input{
 	/// <summary>
-	/// 
 	/// </summary>
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum GestureSourceType

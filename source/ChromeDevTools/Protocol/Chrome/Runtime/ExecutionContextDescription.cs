@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	public class ExecutionContextDescription
 	{
 		/// <summary>
-		/// Gets or sets Unique id of the execution context. It can be used to specify in which execution context script evaluation should be performed.
+		/// Gets or sets Unique id of the execution context. It can be used to specify in which execution contextscript evaluation should be performed.
 		/// </summary>
 		public long Id { get; set; }
 		/// <summary>

@@ -5,7 +5,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
 	/// <summary>
-	/// Fired when virtual machine parses script. This event is also fired for all known and uncollected scripts upon enabling debugger.
+	/// Fired when virtual machine parses script. This event is also fired for all known and uncollected
+	/// scripts upon enabling debugger.
 	/// </summary>
 	[Event(ProtocolName.Debugger.ScriptParsed)]
 	[SupportedBy("Chrome")]

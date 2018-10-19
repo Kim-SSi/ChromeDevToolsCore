@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 	public class StopTrackingHeapObjectsCommand: ICommand<StopTrackingHeapObjectsCommandResponse>
 	{
 		/// <summary>
-		/// Gets or sets If true 'reportHeapSnapshotProgress' events will be generated while snapshot is being taken when the tracking is stopped.
+		/// Gets or sets If true 'reportHeapSnapshotProgress' events will be generated while snapshot is being takenwhen the tracking is stopped.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? ReportProgress { get; set; }

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
 	/// <summary>
-	/// Returns properties of a given object. Object group of the result is inherited from the target object.
+	/// Returns properties of a given object. Object group of the result is inherited from the target
+	/// object.
 	/// </summary>
 	[CommandResponse(ProtocolName.Runtime.GetProperties)]
 	[SupportedBy("Chrome")]

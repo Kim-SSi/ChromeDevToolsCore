@@ -4,111 +4,128 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome
 {
 	public static class ProtocolName
 	{
-		public static class Schema
+		public static class Console
 		{
-			public const string GetDomains = "Schema.getDomains";
-		}
-
-		public static class Runtime
-		{
-			public const string Evaluate = "Runtime.evaluate";
-			public const string AwaitPromise = "Runtime.awaitPromise";
-			public const string CallFunctionOn = "Runtime.callFunctionOn";
-			public const string GetProperties = "Runtime.getProperties";
-			public const string ReleaseObject = "Runtime.releaseObject";
-			public const string ReleaseObjectGroup = "Runtime.releaseObjectGroup";
-			public const string RunIfWaitingForDebugger = "Runtime.runIfWaitingForDebugger";
-			public const string Enable = "Runtime.enable";
-			public const string Disable = "Runtime.disable";
-			public const string DiscardConsoleEntries = "Runtime.discardConsoleEntries";
-			public const string SetCustomObjectFormatterEnabled = "Runtime.setCustomObjectFormatterEnabled";
-			public const string CompileScript = "Runtime.compileScript";
-			public const string RunScript = "Runtime.runScript";
-			public const string QueryObjects = "Runtime.queryObjects";
-			public const string ExecutionContextCreated = "Runtime.executionContextCreated";
-			public const string ExecutionContextDestroyed = "Runtime.executionContextDestroyed";
-			public const string ExecutionContextsCleared = "Runtime.executionContextsCleared";
-			public const string ExceptionThrown = "Runtime.exceptionThrown";
-			public const string ExceptionRevoked = "Runtime.exceptionRevoked";
-			public const string ConsoleAPICalled = "Runtime.consoleAPICalled";
-			public const string InspectRequested = "Runtime.inspectRequested";
+			public const string ClearMessages = "Console.clearMessages";
+			public const string Disable = "Console.disable";
+			public const string Enable = "Console.enable";
+			public const string MessageAdded = "Console.messageAdded";
 		}
 
 		public static class Debugger
 		{
-			public const string Enable = "Debugger.enable";
-			public const string Disable = "Debugger.disable";
-			public const string SetBreakpointsActive = "Debugger.setBreakpointsActive";
-			public const string SetSkipAllPauses = "Debugger.setSkipAllPauses";
-			public const string SetBreakpointByUrl = "Debugger.setBreakpointByUrl";
-			public const string SetBreakpoint = "Debugger.setBreakpoint";
-			public const string RemoveBreakpoint = "Debugger.removeBreakpoint";
-			public const string GetPossibleBreakpoints = "Debugger.getPossibleBreakpoints";
 			public const string ContinueToLocation = "Debugger.continueToLocation";
-			public const string StepOver = "Debugger.stepOver";
-			public const string StepInto = "Debugger.stepInto";
-			public const string StepOut = "Debugger.stepOut";
-			public const string Pause = "Debugger.pause";
-			public const string ScheduleStepIntoAsync = "Debugger.scheduleStepIntoAsync";
-			public const string Resume = "Debugger.resume";
-			public const string SearchInContent = "Debugger.searchInContent";
-			public const string SetScriptSource = "Debugger.setScriptSource";
-			public const string RestartFrame = "Debugger.restartFrame";
-			public const string GetScriptSource = "Debugger.getScriptSource";
-			public const string SetPauseOnExceptions = "Debugger.setPauseOnExceptions";
+			public const string Disable = "Debugger.disable";
+			public const string Enable = "Debugger.enable";
 			public const string EvaluateOnCallFrame = "Debugger.evaluateOnCallFrame";
-			public const string SetVariableValue = "Debugger.setVariableValue";
+			public const string GetPossibleBreakpoints = "Debugger.getPossibleBreakpoints";
+			public const string GetScriptSource = "Debugger.getScriptSource";
+			public const string GetStackTrace = "Debugger.getStackTrace";
+			public const string Pause = "Debugger.pause";
+			public const string PauseOnAsyncCall = "Debugger.pauseOnAsyncCall";
+			public const string RemoveBreakpoint = "Debugger.removeBreakpoint";
+			public const string RestartFrame = "Debugger.restartFrame";
+			public const string Resume = "Debugger.resume";
+			public const string ScheduleStepIntoAsync = "Debugger.scheduleStepIntoAsync";
+			public const string SearchInContent = "Debugger.searchInContent";
 			public const string SetAsyncCallStackDepth = "Debugger.setAsyncCallStackDepth";
 			public const string SetBlackboxPatterns = "Debugger.setBlackboxPatterns";
 			public const string SetBlackboxedRanges = "Debugger.setBlackboxedRanges";
-			public const string ScriptParsed = "Debugger.scriptParsed";
-			public const string ScriptFailedToParse = "Debugger.scriptFailedToParse";
+			public const string SetBreakpoint = "Debugger.setBreakpoint";
+			public const string SetBreakpointByUrl = "Debugger.setBreakpointByUrl";
+			public const string SetBreakpointOnFunctionCall = "Debugger.setBreakpointOnFunctionCall";
+			public const string SetBreakpointsActive = "Debugger.setBreakpointsActive";
+			public const string SetPauseOnExceptions = "Debugger.setPauseOnExceptions";
+			public const string SetReturnValue = "Debugger.setReturnValue";
+			public const string SetScriptSource = "Debugger.setScriptSource";
+			public const string SetSkipAllPauses = "Debugger.setSkipAllPauses";
+			public const string SetVariableValue = "Debugger.setVariableValue";
+			public const string StepInto = "Debugger.stepInto";
+			public const string StepOut = "Debugger.stepOut";
+			public const string StepOver = "Debugger.stepOver";
 			public const string BreakpointResolved = "Debugger.breakpointResolved";
 			public const string Paused = "Debugger.paused";
 			public const string Resumed = "Debugger.resumed";
-		}
-
-		public static class Console
-		{
-			public const string Enable = "Console.enable";
-			public const string Disable = "Console.disable";
-			public const string ClearMessages = "Console.clearMessages";
-			public const string MessageAdded = "Console.messageAdded";
-		}
-
-		public static class Profiler
-		{
-			public const string Enable = "Profiler.enable";
-			public const string Disable = "Profiler.disable";
-			public const string SetSamplingInterval = "Profiler.setSamplingInterval";
-			public const string Start = "Profiler.start";
-			public const string Stop = "Profiler.stop";
-			public const string StartPreciseCoverage = "Profiler.startPreciseCoverage";
-			public const string StopPreciseCoverage = "Profiler.stopPreciseCoverage";
-			public const string TakePreciseCoverage = "Profiler.takePreciseCoverage";
-			public const string GetBestEffortCoverage = "Profiler.getBestEffortCoverage";
-			public const string ConsoleProfileStarted = "Profiler.consoleProfileStarted";
-			public const string ConsoleProfileFinished = "Profiler.consoleProfileFinished";
+			public const string ScriptFailedToParse = "Debugger.scriptFailedToParse";
+			public const string ScriptParsed = "Debugger.scriptParsed";
 		}
 
 		public static class HeapProfiler
 		{
-			public const string Enable = "HeapProfiler.enable";
+			public const string AddInspectedHeapObject = "HeapProfiler.addInspectedHeapObject";
+			public const string CollectGarbage = "HeapProfiler.collectGarbage";
 			public const string Disable = "HeapProfiler.disable";
+			public const string Enable = "HeapProfiler.enable";
+			public const string GetHeapObjectId = "HeapProfiler.getHeapObjectId";
+			public const string GetObjectByHeapObjectId = "HeapProfiler.getObjectByHeapObjectId";
+			public const string GetSamplingProfile = "HeapProfiler.getSamplingProfile";
+			public const string StartSampling = "HeapProfiler.startSampling";
 			public const string StartTrackingHeapObjects = "HeapProfiler.startTrackingHeapObjects";
+			public const string StopSampling = "HeapProfiler.stopSampling";
 			public const string StopTrackingHeapObjects = "HeapProfiler.stopTrackingHeapObjects";
 			public const string TakeHeapSnapshot = "HeapProfiler.takeHeapSnapshot";
-			public const string CollectGarbage = "HeapProfiler.collectGarbage";
-			public const string GetObjectByHeapObjectId = "HeapProfiler.getObjectByHeapObjectId";
-			public const string AddInspectedHeapObject = "HeapProfiler.addInspectedHeapObject";
-			public const string GetHeapObjectId = "HeapProfiler.getHeapObjectId";
-			public const string StartSampling = "HeapProfiler.startSampling";
-			public const string StopSampling = "HeapProfiler.stopSampling";
 			public const string AddHeapSnapshotChunk = "HeapProfiler.addHeapSnapshotChunk";
-			public const string ResetProfiles = "HeapProfiler.resetProfiles";
-			public const string ReportHeapSnapshotProgress = "HeapProfiler.reportHeapSnapshotProgress";
-			public const string LastSeenObjectId = "HeapProfiler.lastSeenObjectId";
 			public const string HeapStatsUpdate = "HeapProfiler.heapStatsUpdate";
+			public const string LastSeenObjectId = "HeapProfiler.lastSeenObjectId";
+			public const string ReportHeapSnapshotProgress = "HeapProfiler.reportHeapSnapshotProgress";
+			public const string ResetProfiles = "HeapProfiler.resetProfiles";
+		}
+
+		public static class Profiler
+		{
+			public const string Disable = "Profiler.disable";
+			public const string Enable = "Profiler.enable";
+			public const string GetBestEffortCoverage = "Profiler.getBestEffortCoverage";
+			public const string SetSamplingInterval = "Profiler.setSamplingInterval";
+			public const string Start = "Profiler.start";
+			public const string StartPreciseCoverage = "Profiler.startPreciseCoverage";
+			public const string StartTypeProfile = "Profiler.startTypeProfile";
+			public const string Stop = "Profiler.stop";
+			public const string StopPreciseCoverage = "Profiler.stopPreciseCoverage";
+			public const string StopTypeProfile = "Profiler.stopTypeProfile";
+			public const string TakePreciseCoverage = "Profiler.takePreciseCoverage";
+			public const string TakeTypeProfile = "Profiler.takeTypeProfile";
+			public const string ConsoleProfileFinished = "Profiler.consoleProfileFinished";
+			public const string ConsoleProfileStarted = "Profiler.consoleProfileStarted";
+		}
+
+		public static class Runtime
+		{
+			public const string AwaitPromise = "Runtime.awaitPromise";
+			public const string CallFunctionOn = "Runtime.callFunctionOn";
+			public const string CompileScript = "Runtime.compileScript";
+			public const string Disable = "Runtime.disable";
+			public const string DiscardConsoleEntries = "Runtime.discardConsoleEntries";
+			public const string Enable = "Runtime.enable";
+			public const string Evaluate = "Runtime.evaluate";
+			public const string GetIsolateId = "Runtime.getIsolateId";
+			public const string GetHeapUsage = "Runtime.getHeapUsage";
+			public const string GetProperties = "Runtime.getProperties";
+			public const string GlobalLexicalScopeNames = "Runtime.globalLexicalScopeNames";
+			public const string QueryObjects = "Runtime.queryObjects";
+			public const string ReleaseObject = "Runtime.releaseObject";
+			public const string ReleaseObjectGroup = "Runtime.releaseObjectGroup";
+			public const string RunIfWaitingForDebugger = "Runtime.runIfWaitingForDebugger";
+			public const string RunScript = "Runtime.runScript";
+			public const string SetAsyncCallStackDepth = "Runtime.setAsyncCallStackDepth";
+			public const string SetCustomObjectFormatterEnabled = "Runtime.setCustomObjectFormatterEnabled";
+			public const string SetMaxCallStackSizeToCapture = "Runtime.setMaxCallStackSizeToCapture";
+			public const string TerminateExecution = "Runtime.terminateExecution";
+			public const string AddBinding = "Runtime.addBinding";
+			public const string RemoveBinding = "Runtime.removeBinding";
+			public const string BindingCalled = "Runtime.bindingCalled";
+			public const string ConsoleAPICalled = "Runtime.consoleAPICalled";
+			public const string ExceptionRevoked = "Runtime.exceptionRevoked";
+			public const string ExceptionThrown = "Runtime.exceptionThrown";
+			public const string ExecutionContextCreated = "Runtime.executionContextCreated";
+			public const string ExecutionContextDestroyed = "Runtime.executionContextDestroyed";
+			public const string ExecutionContextsCleared = "Runtime.executionContextsCleared";
+			public const string InspectRequested = "Runtime.inspectRequested";
+		}
+
+		public static class Schema
+		{
+			public const string GetDomains = "Schema.getDomains";
 		}
 
 		public static class Inspector

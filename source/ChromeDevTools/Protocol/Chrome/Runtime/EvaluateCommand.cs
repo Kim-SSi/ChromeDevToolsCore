@@ -27,12 +27,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? IncludeCommandLineAPI { get; set; }
 		/// <summary>
-		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pause execution. Overrides <code>setPauseOnException</code> state.
+		/// Gets or sets In silent mode exceptions thrown during evaluation are not reported and do not pauseexecution. Overrides `setPauseOnException` state.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? Silent { get; set; }
 		/// <summary>
-		/// Gets or sets Specifies in which execution context to perform evaluation. If the parameter is omitted the evaluation will be performed in the context of the inspected page.
+		/// Gets or sets Specifies in which execution context to perform evaluation. If the parameter is omitted theevaluation will be performed in the context of the inspected page.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public long? ContextId { get; set; }
@@ -52,9 +52,19 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? UserGesture { get; set; }
 		/// <summary>
-		/// Gets or sets Whether execution should <code>await</code> for resulting value and return once awaited promise is resolved.
+		/// Gets or sets Whether execution should `await` for resulting value and return once awaited promise isresolved.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public bool? AwaitPromise { get; set; }
+		/// <summary>
+		/// Gets or sets Whether to throw an exception if side effect cannot be ruled out during evaluation.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public bool? ThrowOnSideEffect { get; set; }
+		/// <summary>
+		/// Gets or sets Terminate execution after timing out (number of milliseconds).
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public double Timeout { get; set; }
 	}
 }

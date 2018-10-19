@@ -6,7 +6,6 @@ using System.Runtime.Serialization;
 
 namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker{
 	/// <summary>
-	/// 
 	/// </summary>
 	[JsonConverter(typeof(StringEnumConverter))]
 	public enum ServiceWorkerVersionStatus
