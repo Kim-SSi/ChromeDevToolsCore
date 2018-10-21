@@ -11,9 +11,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator.Tests
     public class CommandTests
     {
         [TestMethod]
-        [DeploymentItem(DeploymentItems.Inspector11)]
-        [DeploymentItem(DeploymentItems.BrowserProtocol)]
-        [DeploymentItem(DeploymentItems.JsProtocol)]
         public void EqualsTest()
         {
             var inspector11 = ProtocolProcessor.LoadProtocol(new[] { DeploymentItems.Inspector11 }, "inspector-1.1");

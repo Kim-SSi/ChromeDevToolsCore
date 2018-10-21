@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/<insert-target-framework-here>/<insert-project-name-here>.dll",
+            "program": "${workspaceFolder}/tools/MasterDevs.ChromeDevTools.Sample/bin/Debug/netcoreapp2.1/MasterDevs.ChromeDevTools.Sample.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
