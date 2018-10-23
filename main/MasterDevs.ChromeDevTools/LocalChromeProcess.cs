@@ -18,7 +18,6 @@ namespace MasterDevs.ChromeDevTools
         public override void Dispose()
         {
             base.Dispose();
-
             Process.Kill();
             Process.WaitForExit();
 //            Process.Close();

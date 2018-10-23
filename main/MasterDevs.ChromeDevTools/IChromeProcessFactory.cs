@@ -1,7 +1,9 @@
-﻿namespace MasterDevs.ChromeDevTools
+﻿using System;
+
+namespace MasterDevs.ChromeDevTools
 {
     public interface IChromeProcessFactory
     {
-        IChromeProcess Create(int port, bool headless, bool hideScrollBars);
+        IChromeProcess Create(Uri uri, bool headless, bool hideScrollBars);
     }
 }

@@ -242,9 +242,10 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Data);
+            
+            HandleUnknown(e.Data.ToString());
         }
-
+        
         private void WebSocket_Error(object sender, SuperSocket.ClientEngine.ErrorEventArgs e)
         {
             throw e.Exception;
@@ -264,12 +265,20 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Message);
+            HandleUnknown(e.Message);
         }
 
         private void WebSocket_Opened(object sender, EventArgs e)
         {
             _openEvent.Set();
+        }
+
+        private void HandleUnknown(string msg)
+        {
+            var evt = new Event<ErrorResponse>();
+            evt.Params = new ErrorResponse() { Error = new Error() { Code = 0, Message = msg }, Id = 0 };
+            evt.Method = string.Format("(Unable to Handle) {0}", msg);
+            HandleEvent(evt);
         }
     }
 }

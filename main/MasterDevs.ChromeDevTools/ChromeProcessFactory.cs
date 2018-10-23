@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Http;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -16,11 +17,32 @@ namespace MasterDevs.ChromeDevTools
             ChromePath = chromePath;
         }
 
-        public IChromeProcess Create(int port, bool headless, bool hideScrollBars = false)
+        public IChromeProcess Create(Uri uri, bool headless, bool hideScrollBars = false)
+        {            
+            // Check for existing chrome
+            var remoteChrome = new RemoteChromeProcess(uri);
+            try
+            {
+                var sessionInfo = remoteChrome.GetSessionInfo().Result;
+                return remoteChrome;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException is HttpRequestException &&
+                    uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Chrome is not running locally so start it.
+                    return CreateLocalChrome(uri, headless, hideScrollBars);
+                }
+                throw;
+            }
+        }
+
+        private IChromeProcess CreateLocalChrome(Uri uri, bool headless, bool hideScrollBars = false)
         {
             string path = Path.GetRandomFileName();
             var directoryInfo = Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), path));
-            var remoteDebuggingArg = $"--remote-debugging-port={port}";
+            var remoteDebuggingArg = $"--remote-debugging-port={uri.Port}";
             var userDirectoryArg = $"--user-data-dir=\"{directoryInfo.FullName}\"";
             const string headlessArg = "--headless --disable-gpu";
             var chromeProcessArgs = new List<string>
@@ -39,8 +61,7 @@ namespace MasterDevs.ChromeDevTools
             var processStartInfo = new ProcessStartInfo(ChromePath, string.Join(" ", chromeProcessArgs));
             var chromeProcess = Process.Start(processStartInfo);
 
-            string remoteDebuggingUrl = "http://localhost:" + port;
-            return new LocalChromeProcess(new Uri(remoteDebuggingUrl), () => DirectoryCleaner.Delete(directoryInfo), chromeProcess);
+            return new LocalChromeProcess(uri, () => DirectoryCleaner.Delete(directoryInfo), chromeProcess);
         }
     }
 }
