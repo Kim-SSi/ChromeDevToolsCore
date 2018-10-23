@@ -16,6 +16,9 @@ namespace MasterDevs.ChromeDevTools.Sample
         {
             Task.Run(async () =>
             {
+                // When debugging to kill all chrome on windows
+                // taskkill / IM chrome.exe / F
+
                 // synchronization
                 var screenshotDone = new ManualResetEventSlim();
 
@@ -50,6 +53,12 @@ namespace MasterDevs.ChromeDevTools.Sample
                     // but we only subscribe to certain events in this session
                     var pageEnableResult = await chromeSession.SendAsync<Protocol.Chrome.Page.EnableCommand>();
                     Console.WriteLine("PageEnable: " + pageEnableResult.Id);
+
+                    // THIS IS USEFUL FOR KNOWING WHEN THINGS GO WRONG
+                    chromeSession.Subscribe<ErrorResponse>(errorFired => {
+                        Console.WriteLine("#{0} ({1}) {2}", errorFired.Id, errorFired.Error.Code,
+                            errorFired.Error.Message);
+                    });
 
                     chromeSession.Subscribe<LoadEventFiredEvent>(loadEventFired =>
                     {

@@ -156,6 +156,13 @@ namespace MasterDevs.ChromeDevTools
             {
                 _responses.AddOrUpdate(response.Id, id => response, (key, value) => response);
                 requestMre.Set();
+                if (response is ErrorResponse)
+                {
+                    var evt = new Event<ErrorResponse>();
+                    evt.Params = (ErrorResponse) response;
+                    evt.Method = string.Format("({0}( {1}", evt.Params.Error.Code, evt.Params.Error.Message);
+                    HandleEvent(evt);
+                }
             }
             else
             {
